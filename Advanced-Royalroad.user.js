@@ -7,6 +7,7 @@
 // @match        https://www.royalroad.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=royalroad.com
 // @grant        GM_xmlhttpRequest
+// @grant        GM.xmlhttpRequest
 // @grant        GM_addStyle
 // @connect      www.royalroad.com
 // @updateURL    https://raw.githubusercontent.com/RedCommander735/adv-royalroad/master/Advanced-Royalroad.user.js
