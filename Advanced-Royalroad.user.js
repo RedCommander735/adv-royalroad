@@ -124,7 +124,7 @@
         current_page = page_num;
         const DomParser = new DOMParser();
 
-        const next_page = await GM.xmlHttpRequest({ url: url })
+        const next_page = await new Promise((resolve, reject) => { GM.xmlhttpRequest({ url, onload: resolve, onerror: reject }); })
             .then(resp => resp.responseText)
             .catch(e => console.error(e));
 
