@@ -148,6 +148,18 @@
         document.querySelector('div.col-md-8:nth-child(1)').appendChild(search_container)
     }
 
+    function getCookie(name) {
+        let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        if (match) return match[2];
+    }
+
+    if (getCookie('rrl_style') == 'dark') {
+        GM_addStyle(`
+            .mt-checkbox span {
+                border-color: hsla(0,0%,39%,.8) !important;
+            }
+        `)
+    }
 
     const urlParams = new URLSearchParams(window.location.search)
     try {
