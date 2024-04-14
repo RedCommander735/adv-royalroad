@@ -9,9 +9,11 @@
 // @grant        GM_xmlhttpRequest
 // @grant        GM_addStyle
 // @connect      www.royalroad.com
+// @updateURL    https://raw.githubusercontent.com/RedCommander735/adv-royalroad/master/Advanced-Royalroad.user.js
+// @downloadURL  https://raw.githubusercontent.com/RedCommander735/adv-royalroad/master/Advanced-Royalroad.user.js
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
     GM_addStyle(`
@@ -110,7 +112,7 @@
     function isAnyInViewport(elements) {
         let isVisible = false;
         elements.forEach((elem) => {
-            if (isElementInViewport(elem)) {isVisible = true;}
+            if (isElementInViewport(elem)) { isVisible = true; }
         })
 
         return isVisible;
@@ -123,8 +125,8 @@
         const DomParser = new DOMParser();
 
         const next_page = await GM.xmlHttpRequest({ url: url })
-                    .then(resp => resp.responseText)
-                    .catch(e => console.error(e));
+            .then(resp => resp.responseText)
+            .catch(e => console.error(e));
 
         const next_page_dom = DomParser.parseFromString(next_page, 'text/html')
         let search_container = next_page_dom.querySelector('.search-container')
@@ -137,7 +139,7 @@
         for (let i = 0; i < fictions.length; i++) {
             let element = fictions[i];
             const chapters = parseInt(element.querySelector('div.row.stats > div:nth-child(5) > span').textContent.split(' ')[0].replaceAll(',', ''), 10);
-            if (chapters < parseInt(min_chapters, 10)) {element.setAttribute("style", "display: none;");}
+            if (chapters < parseInt(min_chapters, 10)) { element.setAttribute("style", "display: none;"); }
         };
 
         document.querySelector('.search-container:last-child').querySelector('div.text-center').remove()
@@ -216,7 +218,7 @@
     for (let i = 0; i < fictions.length; i++) {
         let element = fictions[i];
         const chapters = parseInt(element.querySelector('div.row.stats > div:nth-child(5) > span').textContent.split(' ')[0].replaceAll(',', ''), 10);
-        if (chapters < parseInt(min_chapters, 10)) {element.setAttribute("style", "display: none;");}
+        if (chapters < parseInt(min_chapters, 10)) { element.setAttribute("style", "display: none;"); }
     };
 
 
