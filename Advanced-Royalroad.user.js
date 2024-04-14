@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Advanced Royalroad
 // @namespace    https://github.com/RedCommander735
-// @version      0.1.0
+// @version      0.1.2
 // @description  Makes Royalroad search infinitely scrollable and adds a minimum number of chapters filter
 // @author       RedCommander735
 // @match        https://www.royalroad.com/*
